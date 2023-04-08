@@ -6,16 +6,18 @@ export const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing:border-box;
     font-family:"Poppins", sans-serif;
+  }
+  body{
+  background-color: ${(props)=> props.theme.colors.background};
+  transition: ease-in-out 0.4s;
 }
 `;
 export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${(props) => (props.isDark ? "#193D31" : "#ffff")};
-  color: ${(props) => (props.isDark ? "#ffff" : "#333335")};
+  color: ${(props) => props.theme.colors.header_text};
   height: 14vh;
-  transition: ease-in-out 0.4s;
 `;
 export const LogoBox = styled.div`
   display: flex;
@@ -46,7 +48,7 @@ export const NavBox = styled.nav`
   }
 `;
 export const IconCircle = styled.div`
- background-color: ${props => props.isDark ? "#ffff" : "#333335"};
+  background-color: ${props => props.theme.colors.icon}; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +67,6 @@ export const MainBox = styled.main`
   align-items: flex-end;
   height: 86vh;
   transition: ease-in-out 0.4s;
-  background-color: ${(props) => (props.isDark ? "#193D31" : "#ffff")};
 `;
 export const FirstSectionMain = styled.section`
   display: flex;
@@ -81,19 +82,20 @@ export const MainText = styled.div`
   justify-content: space-around;
   width: 45vw;
   height: 45vh;
-  color: ${(props) => (props.isDark ? "#ffff" : "#333335")};
+  color: ${(props) => props.theme.colors.main_text};
   h1 {
     width: 30vw;
     font-size: 3.22vw;
     line-height: 9vh;
-    span {
-      font-size: 3.10vw;
-    }
   }
   p {
     font-size: 1.17vw;
   }
 `;
+export const Starbucks = styled.span`
+ font-size: 3.10vw;
+ color: ${(props) => props.theme.colors.main_title};
+`
 export const ButtonText = styled.button`
   background-color: #036940;
   border-radius: 20px;
@@ -123,7 +125,7 @@ export const SocialMedia = styled.a`
   width: 4vw;
   height: 8vh;
   border-radius: 100%;
-  background-color: ${(props) => (props.isDark ? "#0C3123" : " #222222")};
+  background-color: ${(props) => props.theme.colors.social_media};
   &:hover {
     opacity: 0.5;
   }

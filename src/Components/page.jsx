@@ -7,12 +7,14 @@ import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
 import Sun from "../assets/sol.png"
+import { ThemeProvider } from "styled-components";
+import { DarkTheme, LightTheme } from "./Theme.jsx";
 export default function Page() {
   const [mode, setMode] = useState(false);
   return (
-    <>
+    <ThemeProvider theme={mode === false ? LightTheme : DarkTheme}>
       <S.GlobalStyle />
-      <S.Header isDark={mode}>
+      <S.Header>
         <S.LogoBox>
           <img src={Logo} alt="#" />
         </S.LogoBox>
@@ -23,7 +25,7 @@ export default function Page() {
             <li>What´s New</li>
             <li>Contact</li>
           </ul>
-          <S.IconCircle isDark={mode}>
+          <S.IconCircle>
             <img
               onClick={() => {
                 setMode(!mode);
@@ -34,11 +36,11 @@ export default function Page() {
           </S.IconCircle>
         </S.NavBox>
       </S.Header>
-      <S.MainBox isDark={mode}>
+      <S.MainBox>
         <S.FirstSectionMain>
-          <S.MainText isDark={mode}>
+          <S.MainText>
             <h1>
-              It's not just Coffee It's <span style={{color: mode === false ?" #0c8052":'#05F99E' }}>Starbucks</span>
+              It's not just Coffee It's <S.Starbucks>Starbucks</S.Starbucks>
             </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
@@ -49,13 +51,13 @@ export default function Page() {
             <S.ButtonText>Learn More</S.ButtonText>
           </S.MainText>
           <S.SocialMediaBox>
-            <S.SocialMedia isDark={mode} href="#">
+            <S.SocialMedia href="#">
               <img src={facebook} alt="#" />
             </S.SocialMedia>
-            <S.SocialMedia isDark={mode} href="#">
+            <S.SocialMedia href="#">
               <img src={twitter} alt="#" />
             </S.SocialMedia>
-            <S.SocialMedia isDark={mode} href="#">
+            <S.SocialMedia href="#">
               <img src={instagram} alt="#" />
             </S.SocialMedia>
           </S.SocialMediaBox>
@@ -65,6 +67,6 @@ export default function Page() {
           <S.Frapuccino src={Frapucino} alt="#" />
         </S.SecondSectionMain>
       </S.MainBox>
-    </>
+    </ThemeProvider>
   );
 }
