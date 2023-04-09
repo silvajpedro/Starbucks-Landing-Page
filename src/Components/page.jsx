@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import * as S from "./page_style.jsx";
 import Logo from "../assets/logo.png";
 import Frapucino from "../assets/frapuccino.png";
-import Moon from "../assets/moon.png";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
-import Sun from "../assets/sol.png"
 import { ThemeProvider } from "styled-components";
 import { DarkTheme, LightTheme } from "./Theme.jsx";
 export default function Page() {
@@ -26,11 +24,10 @@ export default function Page() {
             <li>Contact</li>
           </ul>
           <S.IconCircle>
-            <img
+            <S.ImgCircle
               onClick={() => {
                 setMode(!mode);
               }}
-              src={mode === false ? Moon:Sun}
               alt="#"
             />
           </S.IconCircle>

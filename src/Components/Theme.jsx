@@ -1,3 +1,6 @@
+import Moon from "../assets/moon.png";
+import Sun from "../assets/sol.png";
+
 export const DarkTheme ={
     colors:{
         background: "#193D31",
@@ -5,7 +8,8 @@ export const DarkTheme ={
         main_text:"#ffff",
         main_title:'#05F99E',
         icon:"#ffff",
-        social_media:"#0C3123"
+        social_media:"#0C3123",
+        modeImage:Sun
     }
 }
 export const LightTheme ={
@@ -16,6 +20,6 @@ export const LightTheme ={
         main_title:" #0c8052",
         icon:"#333335",
         social_media:" #222222",
-        
+        modeImage:Moon
     }
 }

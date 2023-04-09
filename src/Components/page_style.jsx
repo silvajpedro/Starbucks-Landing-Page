@@ -58,10 +58,14 @@ export const IconCircle = styled.div`
   height: 7.2vh;
   margin-left: 2vw;
   transition:ease-in-out 0.5s;
-  img {
-    width: 2.5vw;
-  }
+
 `;
+export const ImgCircle = styled.img.attrs(props => ({
+  src: `${props.theme.colors.modeImage}`
+}))`
+ width: 2.5vw;
+ border:solid;
+`
 export const MainBox = styled.main`
   display: flex;
   align-items: flex-end;
